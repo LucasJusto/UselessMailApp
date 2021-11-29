@@ -11,6 +11,9 @@
 		48692B4127553DF60017DC36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48692B4027553DF60017DC36 /* ContentView.swift */; };
 		48692B4327553DF90017DC36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48692B4227553DF90017DC36 /* Assets.xcassets */; };
 		48692B4627553DF90017DC36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48692B4527553DF90017DC36 /* Preview Assets.xcassets */; };
+		B44AFED8275557980046306C /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AFED7275557980046306C /* InputFieldView.swift */; };
+		B47D8453275547AE001E117D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D8452275547AE001E117D /* HomeView.swift */; };
+		B47D8455275549EF001E117D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D8454275549EF001E117D /* FormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		48692B4027553DF60017DC36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48692B4227553DF90017DC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48692B4527553DF90017DC36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B44AFED7275557980046306C /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		B47D8452275547AE001E117D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B47D8454275549EF001E117D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,8 @@
 		48692B3D27553DF60017DC36 /* UselessEmailApp */ = {
 			isa = PBXGroup;
 			children = (
+				B44AFED62755573D0046306C /* Components */,
+				B47D845127554758001E117D /* View */,
 				48692B3E27553DF60017DC36 /* UselessEmailAppApp.swift */,
 				48692B4027553DF60017DC36 /* ContentView.swift */,
 				48692B4227553DF90017DC36 /* Assets.xcassets */,
@@ -65,6 +73,23 @@
 				48692B4527553DF90017DC36 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B44AFED62755573D0046306C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B44AFED7275557980046306C /* InputFieldView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B47D845127554758001E117D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B47D8452275547AE001E117D /* HomeView.swift */,
+				B47D8454275549EF001E117D /* FormView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47D8455275549EF001E117D /* FormView.swift in Sources */,
+				B44AFED8275557980046306C /* InputFieldView.swift in Sources */,
+				B47D8453275547AE001E117D /* HomeView.swift in Sources */,
 				48692B4127553DF60017DC36 /* ContentView.swift in Sources */,
 				48692B3F27553DF60017DC36 /* UselessEmailAppApp.swift in Sources */,
 			);
