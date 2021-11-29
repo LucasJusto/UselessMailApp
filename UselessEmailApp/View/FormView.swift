@@ -9,10 +9,22 @@ import SwiftUI
 
 struct FormView: View {
     
-    @State var name: String = ""
+    @State var contents: [String] = ["aaa"]
+    var inputs: [InputFieldView] = []
+    
+    static func showNextField() {
+        
+    }
     
     var body: some View {
-        InputFieldView(name: $name, fieldName: "Nome", placeholderText: "Digite...")
+        VStack {
+            Spacer()
+            InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
+            InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
+            InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
+            InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
+            InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
+        }
     }
 }
 

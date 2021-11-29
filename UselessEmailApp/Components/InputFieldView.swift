@@ -9,9 +9,10 @@ import SwiftUI
 
 struct InputFieldView: View {
     
-    @Binding var name: String
+    @Binding var contents: [String]
     let fieldName: String
     let placeholderText: String
+    let inputId: Int
     
     @State var isEditing: Bool = true
     let screenSize = UIScreen.main.bounds
@@ -35,7 +36,7 @@ struct InputFieldView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundColor(Color("marceloGray"))
-                        TextField("Digite...", text: $name)
+                        TextField("Digite...", text: $contents[inputId])
                             .padding(.horizontal, screenSize.width * 0.05)
                     }
                     .frame(width: screenSize.width * fieldWidthPercentage, height: screenSize.width * 0.12)
@@ -61,9 +62,9 @@ struct InputFieldView: View {
 
 struct InputFieldView_Previews: PreviewProvider {
     
-    @State static var name: String = ""
+    @State static var contents: [String] = ["content1"]
     
     static var previews: some View {
-        InputFieldView(name: $name, fieldName: "Nome", placeholderText: "Digite...")
+        InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
     }
 }

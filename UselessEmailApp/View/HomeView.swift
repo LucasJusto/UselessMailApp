@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    let screenSize = UIScreen.main.bounds
+    
     var body: some View {
         VStack {
             Text("Speedrun de \npreenchimento de informações")
                 .bold()
-                .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.16)
+                .frame(width: screenSize.width * 0.5, height: screenSize.height * 0.16)
                 .font(.title2)
                 .multilineTextAlignment(.center)
             NavigationLink(destination: FormView()) {
@@ -23,9 +26,10 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .bold()
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.06)
+                .frame(width: screenSize.width * 0.5, height: screenSize.height * 0.06)
             }
         }
+        .position(x: screenSize.width * 0.5, y: screenSize.height * 0.5)
     }
 }
 
