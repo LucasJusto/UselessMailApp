@@ -15,6 +15,7 @@
 		B44AFED8275557980046306C /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AFED7275557980046306C /* InputFieldView.swift */; };
 		B47D8453275547AE001E117D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D8452275547AE001E117D /* HomeView.swift */; };
 		B47D8455275549EF001E117D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D8454275549EF001E117D /* FormView.swift */; };
+		B4E602E7275697AA007B3A95 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E602E6275697AA007B3A95 /* Fields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B44AFED7275557980046306C /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		B47D8452275547AE001E117D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B47D8454275549EF001E117D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		B4E602E6275697AA007B3A95 /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				B44AFED62755573D0046306C /* Components */,
 				B47D845127554758001E117D /* View */,
+				B4E602E527569789007B3A95 /* Extension */,
 				48692B3E27553DF60017DC36 /* UselessEmailAppApp.swift */,
 				48692B4027553DF60017DC36 /* ContentView.swift */,
 				48692B4227553DF90017DC36 /* Assets.xcassets */,
@@ -93,6 +96,14 @@
 				B437E5B827568B8200717FF6 /* ResultView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B4E602E527569789007B3A95 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B4E602E6275697AA007B3A95 /* Fields.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				B44AFED8275557980046306C /* InputFieldView.swift in Sources */,
 				B47D8453275547AE001E117D /* HomeView.swift in Sources */,
 				48692B4127553DF60017DC36 /* ContentView.swift in Sources */,
+				B4E602E7275697AA007B3A95 /* Fields.swift in Sources */,
 				48692B3F27553DF60017DC36 /* UselessEmailAppApp.swift in Sources */,
 				B437E5B927568B8200717FF6 /* ResultView.swift in Sources */,
 			);
