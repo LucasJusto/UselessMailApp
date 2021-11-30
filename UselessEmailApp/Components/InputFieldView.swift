@@ -13,6 +13,7 @@ struct InputFieldView: View {
     let fieldName: String
     let placeholderText: String
     let inputId: Int
+    var onComplete: () -> Void
     
     @State var isEditing: Bool = true
     let screenSize = UIScreen.main.bounds
@@ -27,7 +28,7 @@ struct InputFieldView: View {
         ZStack {
             VStack {
                 HStack {
-                    Text("Nome")
+                    Text("\(fieldName)")
                         .foregroundColor(Color("marceloGray"))
                     Spacer()
                 }
@@ -36,12 +37,13 @@ struct InputFieldView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 30)
                             .foregroundColor(Color("marceloGray"))
-                        TextField("Digite...", text: $contents[inputId])
+                        TextField("\(placeholderText)", text: $contents[inputId])
                             .padding(.horizontal, screenSize.width * 0.05)
                     }
                     .frame(width: screenSize.width * fieldWidthPercentage, height: screenSize.width * 0.12)
                     Button {
                         isEditing.toggle()
+                        onComplete()
                     } label: {
                         if isEditing {
                             ZStack {
@@ -65,6 +67,6 @@ struct InputFieldView_Previews: PreviewProvider {
     @State static var contents: [String] = ["content1"]
     
     static var previews: some View {
-        InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0)
+        InputFieldView(contents: $contents, fieldName: "Nome", placeholderText: "Digite...", inputId: 0, onComplete: {})
     }
 }
