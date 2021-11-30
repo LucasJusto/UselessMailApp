@@ -46,13 +46,26 @@ struct InputFieldView: View {
                         onComplete()
                     } label: {
                         if isEditing {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .foregroundColor(.green)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.black)
+                            if inputId == 5 {
+                                NavigationLink(destination: ResultView(tempo: "9")) {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 30)
+                                            .foregroundColor(.green)
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.black)
+                                    }
+                                    .frame(height: screenSize.width * 0.12)
+                                }
+                            } else {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .foregroundColor(.green)
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(.black)
+                                }
+                                .frame(height: screenSize.width * 0.12)
                             }
-                            .frame(height: screenSize.width * 0.12)
+                            
                         }
                     }
                 }

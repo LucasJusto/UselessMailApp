@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-let screenSize = UIScreen.main.bounds
-var tempo: String = "9" //esse valor vem da tela anterior
-
 struct ResultView: View {
+    
+    let tempo: String //esse valor vem da tela anterior
+    let screenSize = UIScreen.main.bounds
+    
     var body: some View {
         ZStack{
             VStack{
@@ -53,6 +54,6 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView()
+        ResultView(tempo: "9")
     }
 }
