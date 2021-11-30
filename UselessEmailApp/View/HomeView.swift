@@ -28,6 +28,9 @@ struct HomeView: View {
                 }
                 .frame(width: screenSize.width * 0.5, height: screenSize.height * 0.06)
             }
+            .onTapGesture {
+                MailComposer.initialTime = Date().timeIntervalSinceReferenceDate
+            }
         }
         .position(x: screenSize.width * 0.5, y: screenSize.height * 0.5)
     }
