@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+var seconds: Int = 0
+
 struct FormView: View {
     
     @State var currentField: Fields = Fields.name
     @State var contents: [String] = ["", "", "", "", "", ""]
+    
+    func startTimer() {
+        // 1. Make a new timer
+        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
+            // 2. Check time to add to H:M:S
+            seconds = seconds + 1
+        }
+        
+    }
     
     func showNextField() {
         self.currentField.next()
@@ -35,6 +46,8 @@ struct FormView: View {
             if(currentField >= .workload) {
                 InputFieldView(contents: $contents, fieldName: "Turno", placeholderText: "Digite...", inputId: 5, onComplete: showNextField)
             }
+        }.onAppear {
+            startTimer()
         }
     }
 }

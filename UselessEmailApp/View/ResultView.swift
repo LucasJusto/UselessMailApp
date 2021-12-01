@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ResultView: View {
     let screenSize = UIScreen.main.bounds
     @State private var showingMailComposer = false
@@ -20,7 +22,7 @@ struct ResultView: View {
                     .padding(EdgeInsets.init(top: 0, leading: 0, bottom: screenSize.height*0.09, trailing: 0))
                 Text("Você gastou")
                     .font(.body)
-                Text("\(Date().timeIntervalSinceReferenceDate - MailComposer.initialTime) segundos")
+                Text("\(seconds) segundos")
                     .font(.system(size: screenSize.height*0.06))
                     .fontWeight(.bold)
                 Text("preenchendo as informações")
