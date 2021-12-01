@@ -9,15 +9,15 @@ import SwiftUI
 
 struct InputFieldView: View {
     
+    @State var didTapNextScreen: Bool = false
+    @State var isEditing: Bool = true
     @Binding var contents: [String]
     let fieldName: String
     let placeholderText: String
     let inputId: Int
-    var onComplete: () -> Void
-    @State var didTapNextScreen: Bool = false
-    @State var isEditing: Bool = true
-    var time: TimeInterval = Date().timeIntervalSinceReferenceDate
     let screenSize = UIScreen.main.bounds
+    var onComplete: () -> Void
+    var time: TimeInterval = Date().timeIntervalSinceReferenceDate
     var fieldWidthPercentage: Double {
         if isEditing {
             return 0.75
