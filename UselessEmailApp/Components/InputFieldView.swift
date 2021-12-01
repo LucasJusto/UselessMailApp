@@ -14,8 +14,9 @@ struct InputFieldView: View {
     let placeholderText: String
     let inputId: Int
     var onComplete: () -> Void
-    
+    @State var didTapNextScreen: Bool = false
     @State var isEditing: Bool = true
+    var time: TimeInterval = Date().timeIntervalSinceReferenceDate
     let screenSize = UIScreen.main.bounds
     var fieldWidthPercentage: Double {
         if isEditing {
@@ -44,10 +45,29 @@ struct InputFieldView: View {
                     Button {
                         isEditing.toggle()
                         onComplete()
+                        
+                        if inputId == 0 {
+                            MailComposer.nome = contents[inputId]
+                        }
+                        if inputId == 1 {
+                            MailComposer.email = contents[inputId]
+                        }
+                        if inputId == 2 {
+                            MailComposer.telefone = contents[inputId]
+                        }
+                        if inputId == 3 {
+                            MailComposer.trabalho = contents[inputId]
+                        }
+                        if inputId == 4 {
+                            MailComposer.empresa = contents[inputId]
+                        }
+                        if inputId == 5 {
+                            MailComposer.turno = contents[inputId]
+                        }
                     } label: {
                         if isEditing {
                             if inputId == 5 {
-                                NavigationLink(destination: ResultView(tempo: "9")) {
+                                NavigationLink(destination: ResultView()) {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 30)
                                             .foregroundColor(.green)
@@ -55,6 +75,9 @@ struct InputFieldView: View {
                                             .foregroundColor(.black)
                                     }
                                     .frame(height: screenSize.width * 0.12)
+                                }
+                                .onTapGesture {
+                                    MailComposer.turno = contents[inputId]
                                 }
                             } else {
                                 ZStack {

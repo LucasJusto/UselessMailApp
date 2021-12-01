@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ResultView: View {
-    
-    let tempo: String //esse valor vem da tela anterior
     let screenSize = UIScreen.main.bounds
-    
+    @State private var showingMailComposer = false
     var body: some View {
-        ZStack{
-            VStack{
+        ZStack {
+            VStack {
                 Text("Pronto!")
                     .font(.system(size: screenSize.height*0.06))
                     .font(.largeTitle)
@@ -22,7 +20,7 @@ struct ResultView: View {
                     .padding(EdgeInsets.init(top: 0, leading: 0, bottom: screenSize.height*0.09, trailing: 0))
                 Text("Você gastou")
                     .font(.body)
-                Text("\(tempo) minutos")
+                Text("\(seconds) segundos")
                     .font(.system(size: screenSize.height*0.06))
                     .fontWeight(.bold)
                 Text("preenchendo as informações")
@@ -35,7 +33,7 @@ struct ResultView: View {
                     .multilineTextAlignment(.center)
                     .padding(EdgeInsets.init(top: 0, leading: 0, bottom: screenSize.height*0.015, trailing: 0))
                 Button(action: {
-                    print("Aqui precisa enviar o e-mail")
+                    showingMailComposer = true
                 }) {
                     HStack {
                         Text("Enviar e-mail")
@@ -49,11 +47,14 @@ struct ResultView: View {
                 }
             }
         }
+        .sheet(isPresented: $showingMailComposer, content: {
+            MailComposer()
+        })
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(tempo: "9")
+        ResultView()
     }
 }
