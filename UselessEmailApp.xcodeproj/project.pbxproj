@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48692B3F27553DF60017DC36 /* UselessEmailAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48692B3E27553DF60017DC36 /* UselessEmailAppApp.swift */; };
 		48692B4127553DF60017DC36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48692B4027553DF60017DC36 /* ContentView.swift */; };
 		48692B4327553DF90017DC36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48692B4227553DF90017DC36 /* Assets.xcassets */; };
 		48692B4627553DF90017DC36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48692B4527553DF90017DC36 /* Preview Assets.xcassets */; };
@@ -16,12 +15,12 @@
 		B44AFED8275557980046306C /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44AFED7275557980046306C /* InputFieldView.swift */; };
 		B47D8453275547AE001E117D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D8452275547AE001E117D /* HomeView.swift */; };
 		B47D8455275549EF001E117D /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D8454275549EF001E117D /* FormView.swift */; };
+		B48C02542757E07A009E6B93 /* UselessEmailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C02532757E07A009E6B93 /* UselessEmailApp.swift */; };
 		B4E602E7275697AA007B3A95 /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E602E6275697AA007B3A95 /* Fields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48692B3B27553DF60017DC36 /* UselessEmailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UselessEmailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		48692B3E27553DF60017DC36 /* UselessEmailAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UselessEmailAppApp.swift; sourceTree = "<group>"; };
 		48692B4027553DF60017DC36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48692B4227553DF90017DC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48692B4527553DF90017DC36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		B44AFED7275557980046306C /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		B47D8452275547AE001E117D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B47D8454275549EF001E117D /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		B48C02532757E07A009E6B93 /* UselessEmailApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UselessEmailApp.swift; sourceTree = "<group>"; };
 		B4E602E6275697AA007B3A95 /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,11 +66,10 @@
 				B44AFED62755573D0046306C /* Components */,
 				B47D845127554758001E117D /* View */,
 				B4E602E527569789007B3A95 /* Extension */,
-				48692B3E27553DF60017DC36 /* UselessEmailAppApp.swift */,
+				B48C02532757E07A009E6B93 /* UselessEmailApp.swift */,
 				48692B4027553DF60017DC36 /* ContentView.swift */,
 				48692B4227553DF90017DC36 /* Assets.xcassets */,
 				48692B4427553DF90017DC36 /* Preview Content */,
-				48ACF54127569CA800EDEA50 /* MailComposer.swift */,
 			);
 			path = UselessEmailApp;
 			sourceTree = "<group>";
@@ -104,6 +103,7 @@
 		B4E602E527569789007B3A95 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF54127569CA800EDEA50 /* MailComposer.swift */,
 				B4E602E6275697AA007B3A95 /* Fields.swift */,
 			);
 			path = Extension;
@@ -184,8 +184,8 @@
 				B44AFED8275557980046306C /* InputFieldView.swift in Sources */,
 				B47D8453275547AE001E117D /* HomeView.swift in Sources */,
 				48692B4127553DF60017DC36 /* ContentView.swift in Sources */,
+				B48C02542757E07A009E6B93 /* UselessEmailApp.swift in Sources */,
 				B4E602E7275697AA007B3A95 /* Fields.swift in Sources */,
-				48692B3F27553DF60017DC36 /* UselessEmailAppApp.swift in Sources */,
 				B437E5B927568B8200717FF6 /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UselessEmailApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 6GD2RK7JQN;
+				DEVELOPMENT_TEAM = CUXQ8WM7SV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -347,7 +347,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UselessEmailApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 6GD2RK7JQN;
+				DEVELOPMENT_TEAM = CUXQ8WM7SV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
