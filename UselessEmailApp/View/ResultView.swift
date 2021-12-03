@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct ResultView: View {
     let screenSize = UIScreen.main.bounds
     @State private var showingMailComposer = false
+    
+    /// The delegate required by `MFMailComposeViewController`
+    private let mailComposeDelegate = MailDelegate()
+
+    /// The delegate required by `MFMessageComposeViewController`
+    private let messageComposeDelegate = MessageDelegate()
+    
     var body: some View {
         ZStack {
             VStack {
@@ -33,7 +41,8 @@ struct ResultView: View {
                     .multilineTextAlignment(.center)
                     .padding(EdgeInsets.init(top: 0, leading: 0, bottom: screenSize.height*0.015, trailing: 0))
                 Button(action: {
-                    showingMailComposer = true
+//                    showingMailComposer = true
+                    self.presentMailCompose()
                 }) {
                     HStack {
                         Text("Enviar e-mail")
@@ -47,14 +56,71 @@ struct ResultView: View {
                 }
             }
         }
-        .sheet(isPresented: $showingMailComposer, content: {
-            MailComposer()
-        })
+//        .sheet(isPresented: $showingMailComposer, content: {
+//            MailComposer()
+//        })
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView()
+    }
+}
+
+// MARK: The mail part
+extension ResultView {
+
+    /// Delegate for view controller as `MFMailComposeViewControllerDelegate`
+    private class MailDelegate: NSObject, MFMailComposeViewControllerDelegate {
+
+        func mailComposeController(_ controller: MFMailComposeViewController,
+                                   didFinishWith result: MFMailComposeResult,
+                                   error: Error?) {
+            controller.dismiss(animated: true)
+        }
+
+    }
+
+    /// Present an mail compose view controller modally in UIKit environment
+    private func presentMailCompose() {
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        let vc = UIApplication.shared.keyWindow?.rootViewController
+
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = mailComposeDelegate
+        composeVC.setToRecipients([MailComposer.email])
+        composeVC.setSubject("The most useless message ever.")
+        composeVC.setMessageBody("Thank you for informing your data:\nname: \(MailComposer.nome)\ntelefone: \(MailComposer.telefone)\ntrabalho: \(MailComposer.trabalho)\nempresa: \(MailComposer.empresa)\nturno: \(MailComposer.turno)\nWe used your data for absolutely nothing!\n Have a nice day!", isHTML: false)
+
+        vc?.present(composeVC, animated: true)
+    }
+}
+
+// MARK: The message part
+extension ResultView {
+
+    /// Delegate for view controller as `MFMessageComposeViewControllerDelegate`
+    private class MessageDelegate: NSObject, MFMessageComposeViewControllerDelegate {
+        func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+            // Customize here
+            controller.dismiss(animated: true)
+        }
+
+    }
+
+    /// Present an message compose view controller modally in UIKit environment
+    private func presentMessageCompose() {
+        guard MFMessageComposeViewController.canSendText() else {
+            return
+        }
+        let vc = UIApplication.shared.keyWindow?.rootViewController
+
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = messageComposeDelegate
+
+        vc?.present(composeVC, animated: true)
     }
 }

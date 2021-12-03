@@ -18,6 +18,7 @@ struct MailComposer: UIViewControllerRepresentable {
     static var empresa: String = ""
     static var turno: String = ""
     static var initialTime: TimeInterval = Date().timeIntervalSinceReferenceDate
+    
     func makeUIViewController(context: Context) -> MFMailComposeViewController {
         
         let composer = MFMailComposeViewController()
@@ -25,12 +26,18 @@ struct MailComposer: UIViewControllerRepresentable {
         composer.setToRecipients([MailComposer.email])
         composer.setSubject("The most useless message ever.")
         composer.setMessageBody("Thank you for informing your data:\nname: \(MailComposer.nome)\ntelefone: \(MailComposer.telefone)\ntrabalho: \(MailComposer.trabalho)\nempresa: \(MailComposer.empresa)\nturno: \(MailComposer.turno)\nWe used your data for absolutely nothing!\n Have a nice day!", isHTML: false)
-        
+//        composer.delegate = self
+
         return composer
     }
     
+    
     func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
         
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
